@@ -1,0 +1,53 @@
+{
+    "name": "Simplebot Multibot heroku",
+    "description": "Delta Chat bot that allows to browse the web, download and upload files, and more, all by email / Delta Chat",
+    "keywords": [
+        "simplebot",
+        "deltachat",
+        "downloader",
+        "youtube"
+    ],
+    "success_url": "https://delta.chat",
+    "website": "https://github.com/nelson9608/Simplebot_multibot_heroku",
+    "repository": "https://github.com/nelson9608/Simplebot_multibot_heroku",
+    "env": {
+        "FILESIZE": {
+            "description": "Maximum size of the files that can be downloaded by the bot in bytes",
+            "value": "1073741824"
+        },
+
+        "BOTNAME": {
+            "description": "The name of The Bot",
+            "value": "Multibot"
+        },
+
+        "ADMIN": {
+            "description": "Your own email address as bot administrator",
+            "required": false,
+            "value": ""
+        },
+        "ADDR": {
+            "description": "The email address of the bot. IMAP access required, for gmail check https://support.google.com/mail/answer/7126229",
+            "value": ""
+        },
+        "PASSWORD": {
+            "description": "The password of the bot's email account",
+            "value": ""
+        },
+        "DELAY": {
+            "description": "Time(in seconds) to wait between sent file parts",
+            "value": "60"
+        }
+    },
+    "addons": [
+    ],
+    "buildpacks": [{
+        "url": "heroku/python"
+    }],
+    "formation": {
+        "bot": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
